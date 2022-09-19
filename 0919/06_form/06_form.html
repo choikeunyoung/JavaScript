@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <input type="password" name="password" id="password">
+    <input type="password" name="password_confirmation" id="password_confirmation">
+    <button id="check_Btn"> 확인 </button>
+  </form>
+  <script>
+    const checkBtn = document.querySelector('#check_Btn')
+    checkBtn.addEventListener('click', function() {
+      const pwd = document.querySelector('#password')
+      const check_pwd = document.querySelector('#password_confirmation')
+      console.log(pwd, check_pwd)})
+      if (pwd === check_pwd) {
+        alert("로그인 되었습니다!")
+      }
+      else {
+        alert("비밀번호가 올바르지 않습니다.")
+      }
+    })
+    
+  </script>
+</body>
+</html>

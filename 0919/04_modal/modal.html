@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .modal {
+            width: 100px;
+            height: 50px;
+            box-sizing: border-box;
+            border-radius: .5rem;
+        }
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100vh;
+            color: white;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            font-size: 3rem;
+            flex-direction: column;
+        }
+        .can-btn {
+            margin: 1rem;
+        }
+        .active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <button class="modal" id="modal-btn">눌러봐</button>
+
+    <div id="modal-content" class="modal-overlay">
+        <a><img src="https://mblogthumb-phinf.pstatic.net/MjAyMDA2MDVfMTE2/MDAxNTkxMzM2MTI4Mzkz.VZWWoAYSV1Cc9R1k-1b6oTDItZf50tFehFF6C8ssTlwg.vZku-Aq6aTdp2ZXvHbBbUBs7Vvb5PR6UklHVB_kcpQcg.JPEG.gjhk8/1.JPG?type=w800" alt="" style="width: 100%; height: 100%;"></a>
+        <button id="cancel-modal" class="can-btn"> 취소 </button>
+    </div>
+
+    <script>
+        // 모달 버튼이 클릭 되면
+        // const modalToggle = function() {
+        //     document.querySelector('#modal')
+        // }
+        const modal_btn = document.querySelector('#modal-btn')
+        modal_btn.addEventListener('click', function(event) {
+            document.querySelector("#modal-content").classList.toggle('active')
+        })
+
+        const can_modal = document.querySelector('#cancel-modal')
+        can_modal.addEventListener("click", function() {
+            document.querySelector('#modal-content').classList.toggle('active')
+        })
+    </script>
+</body>
+</html>

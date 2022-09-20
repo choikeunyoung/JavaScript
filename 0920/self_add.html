@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 생성기</title>
+    <style>
+        .balls {
+            width: 10rem;
+            height: 10rem;
+            margin: .5rem;
+            background-color: bisque;
+            border-radius: 5rem;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 10rem;
+        }
+        .ballarea {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1>로또 번호 추첨</h1>
+    <button id="lotto-btn">꾸욱</button>
+    <div id="results"></div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script>
+        const lottoBtn = document.querySelector("#lotto-btn")
+        lottoBtn.addEventListener('click',function() {
+            const result = document.querySelector('balls')
+            result.remove()
+            // 컨테이너 부분 생성
+            const lottoarea = document.createElement('div')
+            lottoarea.classList.add("ballarea")
+            // 난수 번호 생성
+            const numbers = _.sampleSize(_.range(1, 46), 6)
+            // 반복문
+            for (let x of numbers){
+            const ball = document.createElement('div')
+            ball.classList.add('balls')
+            ball.innerText = x
+        }
+        lottoarea.appendChild(ball)
+        result.appendChild(lottoarea)
+        })
+    </script>
+</body>
+</html>
